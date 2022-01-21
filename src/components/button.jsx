@@ -22,7 +22,7 @@ export default function Button(props) {
   } else if (props.title === "Terug") {
     return (
       <Link href="/" className="active">
-        <button id="blenderbutton" className={`${props.grey}`}>
+        <button id="blenderbutton" className={`${props.color}`}>
           <span
             className="material-icons"
             id="blender-wiggle"
