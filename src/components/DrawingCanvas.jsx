@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import Sketch from "react-p5";
 import * as ml5 from "ml5";
@@ -20,6 +22,7 @@ const app = initializeApp({
   authDomain: "verloren-groenten.firebaseapp.com",
   messagingSenderId: "679875628134",
 });
+
 
 // Create a root reference
 const storage = getStorage();
