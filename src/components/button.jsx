@@ -123,3 +123,18 @@ export default function Button(props) {
     );
   }
 }
+
+
+
+// Smoothiesaver! KNOP
+//} else if (props.saveSmoothie) {
+  //return (
+  //  <button
+  //    className="blue"
+  //    onClick={() => props.saveSmoothie()}
+  //  >
+  //    <span>{props.title}</span>
+  //    <span className="material-icons">{props.icon}</span>
+  //  </button>
+  //);
+  //

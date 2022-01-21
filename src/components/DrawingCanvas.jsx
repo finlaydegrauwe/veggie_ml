@@ -49,6 +49,11 @@ const stringsBegin = [
   "suiker",
   "patat",
   "tros",
+  "kers",
+  "blad",
+  "was",
+  "berg",
+  "groene ",
   "tuin"
 ];
 
@@ -71,7 +76,9 @@ const stringsEnd = [
   "dop",
   "rabi",
   "peen",
-  "steel"
+  "steel",
+  "was",
+  "kers"
 ];
 
 // Create a root reference
@@ -125,6 +132,20 @@ export default function DrawingCanvas() {
       console.log("Uploaded a base64 string!");
     });
   };
+
+  // potentieel Smoothie saver: gebruiker ontvangt/downloadt png van smoothie
+
+//   const saveSmoothie = () => {
+   //  console.log(modelOutput);
+   //  const storageRef = ref(storage, "images/" + ".png");
+   //  const uploadTask = uploadString(
+     //  storageRef,
+     //  modelOutput.slice(22).slice(0, -1),
+   //    "base64"
+  //  ).then((snapshot) => {
+  //    console.log("Uploaded a base64 string!");
+//    });
+//  };
 
   const setup = (p5, canvasParentRef) => {
     inputCanvas = p5.createCanvas(SIZE, SIZE).parent(canvasParentRef);
