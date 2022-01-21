@@ -5,31 +5,26 @@ import ml5_model from "../models/veggieCuts6.pict";
 import Button from "./button";
 import GroenteSaver from "../components/groentesaver"
 
-import { initializeApp } from "firebase/app";
+import firebase from 'firebase'
 import { getStorage, ref, uploadString } from "firebase/storage";
 
 
 // Create a root reference
 const storage = getStorage();
 
-// Create a reference to 'mountains.jpg'
-const mountainsRef = ref(storage, 'mountains.jpg');
-
-// Create a reference to 'images/mountains.jpg'
-const mountainImagesRef = ref(storage, 'images/mountains.jpg');
-
 // Set the configuration for your app
 // TODO: Replace with your app's config object
-const firebaseConfig = {
-  apiKey: 'AIzaSyC_QW87lMeYvyU6ySywG_ttrlEept6bOAU',
-  authDomain: '<your-auth-domain>',
-  databaseURL: 'gs://verloren-groenten.appspot.com',
-  storageBucket: '<your-storage-bucket-url>'
-};
-const firebaseApp = initializeApp(firebaseConfig);
+firebase.initializeApp({
+  "projectId": "verloren-groenten",
+  "appId": "1:679875628134:web:694fac0b217228cd4171a7",
+  "storageBucket": "verloren-groenten.appspot.com",
+  "locationId": "europe-west",
+  "apiKey": "AIzaSyClDfZeDysoZgAYMLxbFsTXXUTgi2ahtsY",
+  "authDomain": "verloren-groenten.firebaseapp.com",
+  "messagingSenderId": "679875628134"
+});
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
-const storage = getStorage(firebaseApp);
 
 const SIZE = 256;
 let inputCanvas,
@@ -41,6 +36,13 @@ export default function DrawingCanvas() {
   const [loadingModel, setloadingModel] = useState(true);
   const [savingVeggie,setSavingVeggie] = useState(true);
   const [modelOutput, setmodelOutput] = useState('');
+
+  const saveVeggie = () => {
+    const storageRef = ref(storage, 'images/' + 'testje1');
+const uploadTask = uploadString(storageRef, modelOutput, 'base64').then((snapshot) => {
+  console.log('Uploaded a base64 string!');
+});
+  }
 
   const setup = (p5, canvasParentRef) => {
     inputCanvas = p5.createCanvas(SIZE, SIZE).parent(canvasParentRef);
@@ -153,7 +155,7 @@ export default function DrawingCanvas() {
       </div>
       <div className="col-3"></div>
       <div className="col-4">
-      {savingVeggie? <GroenteSaver/>: <Button title="Groente opslaan" icon="save" color="blue" />}
+      {/*savingVeggie? <GroenteSaver/>: */<Button saveVeggie={saveVeggie} title="Groente opslaan" icon="save" color="blue" />}
       </div>
       <div className="col-5"></div>
     </>
