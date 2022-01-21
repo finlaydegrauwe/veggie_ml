@@ -11,7 +11,7 @@ export default function Smoothie() {
       
       
         <div className="col-1"></div>
-        <div className="col-2"> <Button title="Terug" icon="west" color=""/></div>
+        <div className="col-2"> <Button title="Terug" icon="west" color="grey"/></div>
         <div className="col-3"></div>
         <div className="col-4"></div>
         <div className="col-5"></div>
@@ -23,7 +23,7 @@ export default function Smoothie() {
         <div className="col-5"></div>
       
         <div className="col-1"></div>
-        <div className="col-2 middle-stretch"><Button title="Smoothie opslaan" icon="save" color="blue"/></div>
+        <div className="col-2 middle-stretch"><Button title="Smoothie opslaan/downloaden" icon="save" color="blue"/></div>
         <div className="col-5"></div>
         
     </div>)
