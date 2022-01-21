@@ -53,6 +53,7 @@ const stringsBegin = [
   "blad",
   "was",
   "berg",
+  "groene ",
   "tuin"
 ];
 
