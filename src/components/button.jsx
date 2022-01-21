@@ -72,6 +72,16 @@ export default function Button(props) {
         <span className="material-icons">{props.icon}</span>
       </button>
     );
+  } else if (props.saveSmoothie) {
+    return (
+      <button
+        className="blue"
+        onClick={() => props.saveSmoothie()}
+      >
+        <span>{props.title}</span>
+        <span className="material-icons">{props.icon}</span>
+      </button>
+    );
   } else if (props.title === "Teel jouw groente!") {
     return (
       <button className={`${props.color}`} onClick={() => props.transfer()}>
