@@ -99,6 +99,16 @@ ul{
   100% {transform: rotate(0deg);}
 }
 
+input{
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: 0 3px gray;
+  border-radius: 10px;
+  border: 1px solid gray;
+  font-size: 14pt;
+  padding-left: 6pt;
+}
+
 .groentesaver{
   display:flex;
   flex-direction: column;
