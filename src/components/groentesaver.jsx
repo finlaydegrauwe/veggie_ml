@@ -9,6 +9,23 @@ const stringsBegin = [
   "peer",
   "spaghetti",
   "raap",
+  "aard",
+  "kool",
+  "bloem",
+  "peper",
+  "gurk",
+  "look",
+  "boon",
+  "bos",
+  "water",
+  "boeren",
+  "vrucht",
+  "dop",
+  "rabi",
+  "peen",
+  "steel",
+  "suiker",
+  "tuin"
 ];
 
 const stringsEnd = [
@@ -18,6 +35,22 @@ const stringsEnd = [
   "bes",
   "peer",
   "raap",
+  "aard",
+  "kool",
+  "bloem",
+  "peper",
+  "gurk",
+  "look",
+  "boon",
+  "bos",
+  "water",
+  "boeren",
+  "vrucht",
+  "dop",
+  "rabi",
+  "peen",
+  "steel",
+  "suiker"
 ];
 
 export default function GroenteSaver() {
