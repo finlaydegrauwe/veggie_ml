@@ -19,6 +19,16 @@ export default function Button(props) {
         </button>
       </Link>
     );
+  } else if (props.icon === "brightness_4") {
+    return (
+      <button
+        className={props.darkModeOn ? "lightgrey" : "grey"}
+        onClick={() => props.setDarkModeOn(!props.darkModeOn)}
+      >
+        <span>{props.title}</span>
+        <span className="material-icons">{props.icon}</span>
+      </button>
+    );
   } else if (props.title === "Teel jouw groente!") {
     return (
       <button className={`${props.color}`} onClick={() => props.transfer()}>

@@ -3,6 +3,7 @@ import Sketch from "react-p5";
 import * as ml5 from "ml5";
 import ml5_model from "../models/veggieCuts6.pict";
 import Button from "./button";
+import GroenteSaver from "../components/groentesaver"
 
 const SIZE = 256;
 let inputImg,
@@ -18,6 +19,7 @@ let inputImg,
 export default function DrawingCanvas() {
   let clearCanvas = false;
   const [loadingModel, setloadingModel] = useState(true);
+  const [savingVeggie,setSavingVeggie] = useState(true);
   const [modelOutput, setmodelOutput] = useState('');
 
   const setup = (p5, canvasParentRef) => {
@@ -104,7 +106,7 @@ export default function DrawingCanvas() {
         <p>Teken jouw verloren groente!</p>
         <Sketch className="test" setup={setup} draw={draw} />
       </div>
-      <div className="col-3">
+      <div className="col-3 teler">
         {loadingModel ? <Button
           transfer={transfer}
           title="Model loading"
@@ -131,7 +133,7 @@ export default function DrawingCanvas() {
       </div>
       <div className="col-3"></div>
       <div className="col-4">
-        <Button title="Groente opslaan" icon="save" color="blue" />
+      {savingVeggie? <GroenteSaver/>: <Button title="Groente opslaan" icon="save" color="blue" />}
       </div>
       <div className="col-5"></div>
     </>

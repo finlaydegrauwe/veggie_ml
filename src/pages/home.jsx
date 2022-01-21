@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { Link } from "wouter";
 import Button from "../components/button"
 import Groente from "../components/verlorengroente"
 import DrawingCanvas from "../components/DrawingCanvas"
@@ -29,15 +28,16 @@ function randomLanguage() {
 
 export default function Home() {
   const [groenteGeselecteerd,setGroenteGeselecteerd] = useState(0);
+  const [darkModeOn,setDarkModeOn] = useState(false);
   
   return (
-    <div className="wrapper">
+    <div className={darkModeOn ? 'darkmode' : 'wrapper'}>
         <div className="col-1"></div>
         <div className="col-2 middle-stretch"><img src="https://cdn.glitch.global/40ab18b6-46f9-4c9c-9883-e73f9b5ed006/Veggie_logotype_white_70pt.png?v=1642672629128" alt="Veggie title" width="50%"/></div>
-        <div className="col-5"><Button title="test darkmode" icon="brightness_4" color="grey"/></div>
+        <div className="col-5"><Button title="darkmode" icon="brightness_4" darkModeOn={darkModeOn} setDarkModeOn={setDarkModeOn}/></div>
       
         <div className="col-1"></div>
-        <div className="col-2 middle-stretch" id="inleiding"> <p>Help ons de groentenbak van de supermarkt te diversifiëren!</p><p>En maak vervolgens je eigen veggie smoothie.</p></div>
+        <div className="col-2  middle-stretch"> <div className={darkModeOn ? 'inleiding_dark' : 'inleiding'}> <p>Help ons de groentenbak van de supermarkt te diversifiëren!</p><p>En maak vervolgens je eigen veggie smoothie.</p></div></div>
         <div className="col-5"></div>
       
         <DrawingCanvas />
