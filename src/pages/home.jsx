@@ -4,15 +4,15 @@ import Groente from "../components/verlorengroente"
 import DrawingCanvas from "../components/DrawingCanvas"
 
 // Our language strings for the header
-const strings = [
-  "wortel",
-  "knol",
-  "bei",
-  "bes",
-  "peer",
-  "spaghetti",
-  "raap"
-];
+// const strings = [
+//   "wortel",
+//   "knol",
+//   "bei",
+//   "bes",
+//   "peer",
+//   "spaghetti",
+//   "raap"
+// ];
 
 const groenten = [
   {titel: "preipeer", afbeelding:"https://www.healthylifestylesliving.com/wp-content/uploads/2015/12/placeholder-256x256.gif"},
@@ -22,9 +22,9 @@ const groenten = [
 ]
 
 // Utility function to choose a random value from the language array
-function randomLanguage() {
-  return strings[Math.floor(Math.random() * strings.length)];
-}
+// function randomLanguage() {
+//   return strings[Math.floor(Math.random() * strings.length)];
+// }
 
 export default function Home() {
   const [groenteGeselecteerd,setGroenteGeselecteerd] = useState(0);
@@ -53,7 +53,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="col-5">{groenteGeselecteerd != 0 &&(<Button title="Blend it up" icon="blender" color="green" />)}</div>
+        <div className="col-5">{groenteGeselecteerd !== 0 &&(<Button title="Blend it up" icon="blender" color="green" />)}</div>
     </div>)
 }
 
