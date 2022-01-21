@@ -8,7 +8,7 @@ export default function GroenteSaver(props) {
         <Button
           willeKeurigeGroente={props.willeKeurigeGroente}
           setgroenteNaam={props.setgroenteNaam}
-          title="andere!  "
+          title="Andere naam"
           icon="autorenew"
           color="purple"
         />

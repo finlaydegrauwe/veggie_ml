@@ -56,6 +56,9 @@ ul{
 
 #blenderbutton{
   flex-direction:column;
+  position: fixed;
+right: 5%;
+top: 40%;
 }
 
 #blender-wiggle:hover{
@@ -324,5 +327,5 @@ button:active {
 }
 
 .teler {
-  margin-top: 150px;
+  margin: auto 20px;
 }

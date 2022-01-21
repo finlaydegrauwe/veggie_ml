@@ -22,8 +22,6 @@ export default function Home() {
     listAll(listRef)
       .then((res) => {
         res.items.forEach((itemRef) => {
-          console.log(itemRef._location.path_);
-
           getDownloadURL(ref(storage, itemRef._location.path_))
             .then((url) => {
               setData((data) => [...data, {afbeelding:url,titel:itemRef._location.path_.slice(7).slice(0,-4)}])
@@ -55,7 +53,7 @@ export default function Home() {
       </div>
       <div className="col-5">
         <Button
-          title="darkmode"
+          title="Dark mode"
           icon="brightness_4"
           darkModeOn={darkModeOn}
           setDarkModeOn={setDarkModeOn}

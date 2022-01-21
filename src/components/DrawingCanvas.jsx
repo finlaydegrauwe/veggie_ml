@@ -107,7 +107,7 @@ export default function DrawingCanvas() {
   let clearCanvas = false;
   const [loadingModel, setloadingModel] = useState(true);
   const [savingVeggie, setSavingVeggie] = useState(true);
-  const [modelOutput, setmodelOutput] = useState("");
+  const [modelOutput, setmodelOutput] = useState("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthemissourians.com%2Fwp-content%2Fuploads%2F2017%2F04%2Fwhite-jpg-256.jpg&f=1&nofb=1");
 
   const saveAutoGenVeggie = () => {
     console.log(modelOutput);
