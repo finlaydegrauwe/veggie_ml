@@ -16,6 +16,6 @@ Enjoy Veggie!
 
 🛠🛠🛠
 
-Database of vegetables used: 'Fruit and Vegetables Image Recognition' on Kaggle.
-Based on Pix2pix
-Made with React.JS, Firebase and a little bit of p5.JS
+- Database of vegetables used: 'Fruit and Vegetables Image Recognition' on Kaggle.
+- Based on Pix2pix
+- Made with React.JS, Firebase and a little bit of p5.JS
