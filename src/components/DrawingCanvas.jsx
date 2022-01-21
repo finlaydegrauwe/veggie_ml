@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Sketch from "react-p5";
 import * as ml5 from "ml5";
-import ml5_model from "../models/veggieCuts6.pict";
+import ml5_model from "../models/veggie_ml.pict";
 import Button from "./button";
 import GroenteSaver from "../components/groentesaver";
 
@@ -128,7 +128,6 @@ export default function DrawingCanvas() {
 
   const setup = (p5, canvasParentRef) => {
     inputCanvas = p5.createCanvas(SIZE, SIZE).parent(canvasParentRef);
-    console.log(inputCanvas);
 
     // Selcect output div container
     //outputContainer = select('#output');
