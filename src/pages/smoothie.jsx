@@ -1,7 +1,5 @@
 import * as React from "react";
-import { Link } from "wouter";
 import Button from "../components/button"
-import Groente from "../components/verlorengroente"
 
  /* nog in te vullen voor smoothie pagina*/
 

@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { Router, Route } from "wouter";
 
 /**
 * We use hash based location https://github.com/molefrog/wouter#customizing-the-location-hook
