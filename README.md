@@ -3,6 +3,7 @@
 🥕🥕🥕
 
 Dutch website & ML model!
+Take a look at its website: 
 
 Veggie is a machine learning model that has been trained with a database of only a couple of vegetables: beetroot, bell pepper, cabbage, carrot, cauliflower, corn, cucumber, eggplant, ginger and potatoes.
 
@@ -16,6 +17,6 @@ Enjoy Veggie!
 
 🛠🛠🛠
 
-- Database of vegetables used: 'Fruit and Vegetables Image Recognition' on Kaggle.
+- Database of vegetables used: Fruit and Vegetables Image Recognition (https://www.kaggle.com/kritikseth/fruit-and-vegetable-image-recognition) on Kaggle.
 - Based on Pix2pix
 - Made with React.JS, Firebase and a little bit of p5.JS
