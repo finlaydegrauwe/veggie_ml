@@ -43,14 +43,11 @@ const stringsEnd = [
   "look",
   "boon",
   "bos",
-  "water",
-  "boeren",
   "vrucht",
   "dop",
   "rabi",
   "peen",
-  "steel",
-  "suiker"
+  "steel"
 ];
 
 export default function GroenteSaver() {
