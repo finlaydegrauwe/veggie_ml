@@ -123,7 +123,7 @@ export default function DrawingCanvas() {
       <div className="col-1"></div>
       <div className="col-2">
         {" "}
-        <p>Teken jouw verloren groente!</p>
+        <p><strong>Teken jouw verloren groente!</strong></p>
         <Sketch className="test" setup={setup} draw={draw} />
       </div>
       <div className="col-3 teler">
@@ -142,7 +142,7 @@ export default function DrawingCanvas() {
       </div>
       <div className="col-4">
         {" "}
-        <p>Oogst</p>
+        <p><strong>Oogst</strong></p>
         <img src={modelOutput} alt="machine output" />
       </div>
       <div className="col-5"></div>
