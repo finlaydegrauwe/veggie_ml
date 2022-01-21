@@ -11,30 +11,9 @@ const storage = getStorage();
 export default function Home() {
   const [groenteGeselecteerd, setGroenteGeselecteerd] = useState(0);
   const [darkModeOn, setDarkModeOn] = useState(false);
+  const [refreshImages, setrefreshImages] = useState(false);
 
-  const [data, setData] = useState([
-    {
-      titel: "preipeer",
-      afbeelding:
-        "https://www.healthylifestylesliving.com/wp-content/uploads/2015/12/placeholder-256x256.gif",
-    },
-    {
-      titel: "knolpeer",
-      afbeelding:
-        "https://www.healthylifestylesliving.com/wp-content/uploads/2015/12/placeholder-256x256.gif",
-    },
-    {
-      titel: "besbei",
-      afbeelding:
-        "https://www.healthylifestylesliving.com/wp-content/uploads/2015/12/placeholder-256x256.gif",
-    },
-    {
-      titel: "aardbol",
-      afbeelding:
-        "https://www.healthylifestylesliving.com/wp-content/uploads/2015/12/placeholder-256x256.gif",
-    },
-  ]);
-  const [image, setImage] = useState("");
+  const [data, setData] = useState([]);
 
   const getImages = () => {
     const listRef = ref(storage, "images");
@@ -47,6 +26,7 @@ export default function Home() {
 
           getDownloadURL(ref(storage, itemRef._location.path_))
             .then((url) => {
+              setData((data) => [...data, {afbeelding:url,titel:itemRef._location.path_.slice(7).slice(0,-4)}])
               console.log(itemRef._location.path_);
               console.log(url);
             })
@@ -62,7 +42,8 @@ export default function Home() {
 
   useEffect(() => {
     getImages();
-  }, []);
+    setrefreshImages(false)
+  }, [refreshImages]);
 
   return (
     <div className={darkModeOn ? "darkmode" : "wrapper"}>
@@ -94,7 +75,7 @@ export default function Home() {
       </div>
       <div className="col-5"></div>
 
-      <DrawingCanvas />
+      <DrawingCanvas setrefreshImages={setrefreshImages} />
 
       <div className="col-1"></div>
       <div className="col-2 middle-stretch">

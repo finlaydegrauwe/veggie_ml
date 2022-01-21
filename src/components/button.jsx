@@ -56,7 +56,7 @@ export default function Button(props) {
     return (
       <button
         className="blue"
-        onClick={() => props.saveAutoGenVeggie()}
+        onClick={() => {props.saveAutoGenVeggie();props.setrefreshImages(true)}}
       >
         <span>{props.title}</span>
         <span className="material-icons">{props.icon}</span>
@@ -66,7 +66,7 @@ export default function Button(props) {
     return (
       <button
         className="blue"
-        onClick={() => props.saveZelfGenVeggie()}
+        onClick={() => {props.saveZelfGenVeggie();props.setrefreshImages(true)}}
       >
         <span>{props.title}</span>
         <span className="material-icons">{props.icon}</span>
