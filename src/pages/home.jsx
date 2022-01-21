@@ -27,8 +27,6 @@ export default function Home() {
           getDownloadURL(ref(storage, itemRef._location.path_))
             .then((url) => {
               setData((data) => [...data, {afbeelding:url,titel:itemRef._location.path_.slice(7).slice(0,-4)}])
-              console.log(itemRef._location.path_);
-              console.log(url);
             })
             .catch((error) => {
               // Handle any errors
