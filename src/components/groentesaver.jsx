@@ -25,6 +25,8 @@ const stringsBegin = [
   "peen",
   "steel",
   "suiker",
+  "patat",
+  "tros",
   "tuin"
 ];
 
