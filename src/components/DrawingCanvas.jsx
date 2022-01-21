@@ -5,6 +5,32 @@ import ml5_model from "../models/veggieCuts6.pict";
 import Button from "./button";
 import GroenteSaver from "../components/groentesaver"
 
+import { initializeApp } from "firebase/app";
+import { getStorage, ref, uploadString } from "firebase/storage";
+
+
+// Create a root reference
+const storage = getStorage();
+
+// Create a reference to 'mountains.jpg'
+const mountainsRef = ref(storage, 'mountains.jpg');
+
+// Create a reference to 'images/mountains.jpg'
+const mountainImagesRef = ref(storage, 'images/mountains.jpg');
+
+// Set the configuration for your app
+// TODO: Replace with your app's config object
+const firebaseConfig = {
+  apiKey: 'AIzaSyC_QW87lMeYvyU6ySywG_ttrlEept6bOAU',
+  authDomain: '<your-auth-domain>',
+  databaseURL: 'gs://verloren-groenten.appspot.com',
+  storageBucket: '<your-storage-bucket-url>'
+};
+const firebaseApp = initializeApp(firebaseConfig);
+
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const storage = getStorage(firebaseApp);
+
 const SIZE = 256;
 let inputCanvas,
   pix2pix,
