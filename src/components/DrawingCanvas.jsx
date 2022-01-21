@@ -114,7 +114,7 @@ export default function DrawingCanvas() {
     const storageRef = ref(storage, "images/" + groenteNaam + ".png");
     const uploadTask = uploadString(
       storageRef,
-      modelOutput.slice(22).slice(0, -1),
+      modelOutput.slice(22),
       "base64"
     ).then((snapshot) => {
       console.log("Uploaded a base64 string!");
@@ -126,7 +126,7 @@ export default function DrawingCanvas() {
     const storageRef = ref(storage, "images/" + eigenGroenteNaam + ".png");
     const uploadTask = uploadString(
       storageRef,
-      modelOutput.slice(22).slice(0, -1),
+      modelOutput.slice(22),
       "base64"
     ).then((snapshot) => {
       console.log("Uploaded a base64 string!");
