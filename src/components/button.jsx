@@ -22,7 +22,7 @@ export default function Button(props) {
   } else if (props.title === "Terug") {
     return (
       <Link href="/" className="active">
-        <button id="blenderbutton" className={`${props.color}`}>
+        <button id="blenderbutton" className={`${props.grey}`}>
           <span
             className="material-icons"
             id="blender-wiggle"
@@ -56,7 +56,7 @@ export default function Button(props) {
     return (
       <button
         className="blue"
-        onClick={() => {props.saveAutoGenVeggie();props.setrefreshImages(true)}}
+        onClick={() => props.saveAutoGenVeggie()}
       >
         <span>{props.title}</span>
         <span className="material-icons">{props.icon}</span>
@@ -66,7 +66,7 @@ export default function Button(props) {
     return (
       <button
         className="blue"
-        onClick={() => {props.saveZelfGenVeggie();props.setrefreshImages(true)}}
+        onClick={() => props.saveZelfGenVeggie()}
       >
         <span>{props.title}</span>
         <span className="material-icons">{props.icon}</span>

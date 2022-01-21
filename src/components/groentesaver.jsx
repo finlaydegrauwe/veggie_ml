@@ -15,7 +15,6 @@ export default function GroenteSaver(props) {
         <p></p>
         <Button
             saveAutoGenVeggie={props.saveAutoGenVeggie}
-            setrefreshImages={props.setrefreshImages}
         
         title={props.groenteNaam} icon="save" color="blue" />
       </div>
@@ -28,7 +27,6 @@ export default function GroenteSaver(props) {
         />
         <Button 
             saveZelfGenVeggie={props.saveZelfGenVeggie}
-            setrefreshImages={props.setrefreshImages}
             title="Opslaan" icon="save" color="blue" />
       </div>
     </div>
