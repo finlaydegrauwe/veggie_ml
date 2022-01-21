@@ -101,7 +101,18 @@ ul{
 
 .groentesaver{
   display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex-row{
+  display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+.flex-row button{
+  margin: 0 10px !important;
 }
 
 .darkmode {
@@ -197,6 +208,10 @@ ul{
 
 .middle-stretch{
   grid-column: 2 / span 3
+}
+
+.save-stretch{
+  grid-column: 3 / span 3
 }
 
 /* Buttons */

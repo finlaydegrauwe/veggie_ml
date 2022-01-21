@@ -29,7 +29,16 @@ export default function Button(props) {
         <span className="material-icons">{props.icon}</span>
       </button>
     );
-  }else if (props.saveVeggie) {
+  } else if (props.icon === "autorenew") {
+    return (
+      <button className={`${props.color}`}
+      onClick={() => props.setgroenteNaam(props.willeKeurigeGroente())}
+      >
+        <span>{props.title}</span>
+        <span className="material-icons">{props.icon}</span>
+      </button>
+    );
+  } else if (props.saveVeggie) {
     return (
       <button
         className="lightgrey"

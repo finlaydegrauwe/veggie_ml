@@ -161,10 +161,9 @@ export default function DrawingCanvas() {
       <div className="col-2">
         <Button clear={clear} title="Wis tekening" icon="close" color="red" />
       </div>
-      <div className="col-3"></div>
-      <div className="col-4">
-        {
-          /*savingVeggie? <GroenteSaver/>: */ <Button
+      <div className="col-3 save-stretch" >
+      {
+          savingVeggie? <GroenteSaver/>: <Button
             saveVeggie={saveVeggie}
             title="Groente opslaan"
             icon="save"
@@ -172,7 +171,6 @@ export default function DrawingCanvas() {
           />
         }
       </div>
-      <div className="col-5"></div>
     </>
   );
 }
