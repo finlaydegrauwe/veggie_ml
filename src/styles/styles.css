@@ -1,0 +1,262 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+/* Our default values set as CSS variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Rubik:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-bg: #CDD2DA;
+  --color-text-main: #000000;
+  --color-primary: #AFECE0;
+  --image-max-width: 320px;
+}
+
+/* Basic page style resets */
+ {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Page structure */
+body {
+  background-color: var(--color-bg);
+  margin: 0;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:30px;
+}
+
+*{
+  font-family: 'Rubik', sans-serif;
+}
+
+#blender_achtergrond{
+  background-image: url("https://cdn.glitch.global/40ab18b6-46f9-4c9c-9883-e73f9b5ed006/Smoothiemaker%20patroon.png?v=1642675949080");
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 256px 1fr 256px 1fr;
+  grid-row-gap: 10px;
+}
+
+#blenderbutton{
+  flex-direction:column;
+}
+
+#blender-wiggle:hover{
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(10deg);}
+  25% {-webkit-transform: rotate(-10deg);}
+  50% {-webkit-transform: rotate(20deg);}
+  75% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
+
+@-ms-keyframes wiggle {
+  0% {-ms-transform: rotate(1deg);}
+  25% {-ms-transform: rotate(-1deg);}
+  50% {-ms-transform: rotate(1.5deg);}
+  75% {-ms-transform: rotate(-5deg);}
+  100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+#darkmode {
+  background-color: #493950;
+  /*color: #FFFFFF;*/
+  display: grid;
+  padding: 10px;
+  margin: auto 0;
+  grid-template-columns: 1fr 256px 1fr 256px 1fr;
+  grid-row-gap: 10px;
+}
+
+.wrapper {
+  display: grid;
+  padding: 10px;
+  margin: auto 0;
+  grid-template-columns: 1fr 256px 1fr 256px 1fr;
+  grid-row-gap: 10px;
+}
+
+/* Page titles */
+
+/* Veggie = Monofett (h1) */
+#pagetitle{
+  background-color: black;
+  border-radius: 40px;
+  color: #FFFFFF;
+  font-family: "Monofett", sans-serif;
+  font-size: 70px;
+  
+}
+
+#inleiding{
+  background-color:#B8BBC0;
+  border-radius: 7px;
+  margin: 30px;
+  padding: 10px;
+}
+
+#vierkant1 {
+  height: 256px;
+  width: 256px;
+  background-color: white;
+  border: solid black;
+  border-width: 1px;
+  margin:auto;
+  
+}
+
+
+#vierkant2 {
+  height: 512px;
+  width: 512px;
+  background-color: white;
+  border: solid black;
+  border-width: 1px;
+  margin:auto;
+  
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 1px;
+
+}
+
+.col-1 {
+  margin: 
+} /* lege kolom */
+
+
+.col-2 { /* linker kolom */
+  text-align: center;
+  
+}
+.col-3 { /* middel kolom */
+  text-align: center;
+  
+  
+}
+.col-4 { /* rechter kolom */
+  text-align: center;
+  
+}
+
+.col-5 {
+  margin: 0px;
+} /* lege kolom */
+
+
+.middle-stretch{
+  grid-column: 2 / span 3
+}
+
+/* Buttons */
+
+button{
+  display: flex;
+  border: none;
+    flex-direction: row;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    align-items: center;
+    gap: 8px;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  
+  /*mag weg*/
+  margin:auto;
+}
+
+button:active {
+    box-shadow: 0 1px #333333;
+  transform: translateY(8px);
+}
+
+.green {
+    box-shadow: 0 9px HSL(140, 95%, 26%);
+    background-color: HSL(140, 95%, 36%);
+}
+
+.green:hover{
+  background-color: HSL(140, 95%, 38%);
+}
+
+.green:active{
+  background-color: HSL(140, 95%, 32%);
+}
+
+.grey {
+    box-shadow: 0 9px HSL(284, 12%, 24%);
+    background-color: HSL(284, 12%, 34%);
+}
+
+.grey:hover{
+      background-color: HSL(284, 12%, 36%);
+}
+
+.grey:active{
+      background-color: HSL(284, 12%, 30%);
+}
+
+.red {
+    box-shadow: 0 9px HSL(1, 77%, 45%);
+  background-color: HSL(1, 77%, 55%);
+}
+.red:hover {
+  background-color: HSL(1, 77%, 57%);
+  }
+.red:active {
+  background-color: HSL(1, 77%, 51%);
+}
+
+.blue{
+    box-shadow: 0 9px HSL(198, 95%, 26%);
+  background-color: HSL(198, 95%, 36%);
+}
+
+.blue:hover{
+  background-color: HSL(198, 95%, 38%);
+}
+
+.blue:active{
+  background-color: HSL(198, 95%, 32%);
+}
