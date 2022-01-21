@@ -19,7 +19,21 @@ export default function Button(props) {
         </button>
       </Link>
     );
-  } else if (props.icon === "brightness_4") {
+  } else if (props.title === "Terug") {
+    return (
+      <Link href="/home" className="active">
+        <button id="blenderbutton" className={`${props.color}`}>
+          <span
+            className="material-icons"
+            id="blender-wiggle"
+            style={{ fontSize: "48pt" }}
+          >
+            {props.icon}
+          </span>
+          <span>{props.title}</span>
+        </button>
+      </Link>
+    );} else if (props.icon === "brightness_4") {
     return (
       <button
         className={props.darkModeOn ? "lightgrey" : "grey"}
