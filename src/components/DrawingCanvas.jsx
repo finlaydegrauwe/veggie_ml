@@ -152,7 +152,7 @@ export default function DrawingCanvas() {
       </div>
       <div className="col-4">
         {" "}
-        <p>Oogst</p>
+        <p><strong>Oogst</strong></p>
         <img src={modelOutput} alt="machine output" />
       </div>
       <div className="col-5"></div>
