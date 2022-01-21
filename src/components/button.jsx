@@ -29,6 +29,16 @@ export default function Button(props) {
         <span className="material-icons">{props.icon}</span>
       </button>
     );
+  }else if (props.saveVeggie) {
+    return (
+      <button
+        className="lightgrey"
+        onClick={() => props.saveVeggie()}
+      >
+        <span>{props.title}</span>
+        <span className="material-icons">{props.icon}</span>
+      </button>
+    );
   } else if (props.title === "Teel jouw groente!") {
     return (
       <button className={`${props.color}`} onClick={() => props.transfer()}>

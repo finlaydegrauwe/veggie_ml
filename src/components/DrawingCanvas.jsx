@@ -5,7 +5,7 @@ import ml5_model from "../models/veggieCuts6.pict";
 import Button from "./button";
 import GroenteSaver from "../components/groentesaver"
 
-import { initializeApp } from "firebase/app";
+import firebase from 'firebase'
 import { getStorage, ref, uploadString } from "firebase/storage";
 
 
@@ -25,7 +25,6 @@ firebase.initializeApp({
 });
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
-const storage = getStorage(firebaseApp);
 
 const SIZE = 256;
 let inputCanvas,
@@ -39,7 +38,10 @@ export default function DrawingCanvas() {
   const [modelOutput, setmodelOutput] = useState('');
 
   const saveVeggie = () => {
-
+    const storageRef = ref(storage, 'images/' + 'testje1');
+const uploadTask = uploadString(storageRef, modelOutput, 'base64').then((snapshot) => {
+  console.log('Uploaded a base64 string!');
+});
   }
 
   const setup = (p5, canvasParentRef) => {
