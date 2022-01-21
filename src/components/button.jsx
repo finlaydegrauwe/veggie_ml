@@ -21,8 +21,8 @@ export default function Button(props) {
     );
   } else if (props.title === "Terug") {
     return (
-      <Link href="/home" className="active">
-        <button id="blenderbutton" className={`${props.color}`}>
+      <Link href="/" className="active">
+        <button id="blenderbutton" className={`${props.grey}`}>
           <span
             className="material-icons"
             id="blender-wiggle"
