@@ -38,11 +38,21 @@ export default function Button(props) {
         <span className="material-icons">{props.icon}</span>
       </button>
     );
-  } else if (props.saveVeggie) {
+  } else if (props.saveAutoGenVeggie) {
     return (
       <button
-        className="lightgrey"
-        onClick={() => props.saveVeggie()}
+        className="blue"
+        onClick={() => props.saveAutoGenVeggie()}
+      >
+        <span>{props.title}</span>
+        <span className="material-icons">{props.icon}</span>
+      </button>
+    );
+  } else if (props.saveZelfGenVeggie) {
+    return (
+      <button
+        className="blue"
+        onClick={() => props.saveZelfGenVeggie()}
       >
         <span>{props.title}</span>
         <span className="material-icons">{props.icon}</span>

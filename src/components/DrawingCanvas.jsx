@@ -23,6 +23,54 @@ const app = initializeApp({
   messagingSenderId: "679875628134",
 });
 
+const stringsBegin = [
+  "wortel",
+  "knol",
+  "bei",
+  "bes",
+  "peer",
+  "spaghetti",
+  "raap",
+  "aard",
+  "kool",
+  "bloem",
+  "peper",
+  "gurk",
+  "look",
+  "boon",
+  "bos",
+  "water",
+  "boeren",
+  "vrucht",
+  "dop",
+  "rabi",
+  "peen",
+  "steel",
+  "suiker",
+  "tuin",
+];
+
+const stringsEnd = [
+  "wortel",
+  "knol",
+  "bei",
+  "bes",
+  "peer",
+  "raap",
+  "aard",
+  "kool",
+  "bloem",
+  "peper",
+  "gurk",
+  "look",
+  "boon",
+  "bos",
+  "vrucht",
+  "dop",
+  "rabi",
+  "peen",
+  "steel",
+];
 
 // Create a root reference
 const storage = getStorage();
@@ -35,19 +83,45 @@ let inputCanvas,
   isTransfering = false;
 
 export default function DrawingCanvas() {
+  const [groenteNaam, setgroenteNaam] = useState(willeKeurigeGroente());
+  const [eigenGroenteNaam, setEigenGroenteNaam] = useState('');
+
+  function willeKeurigeGroente() {
+    let groentje =
+      stringsBegin[Math.floor(Math.random() * stringsBegin.length)] +
+      stringsBegin[Math.floor(Math.random() * stringsBegin.length)] +
+      stringsEnd[Math.floor(Math.random() * stringsEnd.length)];
+    groentje = groentje.charAt(0).toUpperCase() + groentje.slice(1);
+    return groentje;
+  }
+
   let clearCanvas = false;
   const [loadingModel, setloadingModel] = useState(true);
   const [savingVeggie, setSavingVeggie] = useState(true);
   const [modelOutput, setmodelOutput] = useState("");
 
-  const saveVeggie = () => {
-    console.log(modelOutput)
-    const storageRef = ref(storage, "images/" + "testje2.png");
-    const uploadTask = uploadString(storageRef, modelOutput.slice(22).slice(0, -1), "base64").then(
-      (snapshot) => {
-        console.log("Uploaded a base64 string!");
-      }
-    );
+  const saveAutoGenVeggie = () => {
+    console.log(modelOutput);
+    const storageRef = ref(storage, "images/" + groenteNaam + ".png");
+    const uploadTask = uploadString(
+      storageRef,
+      modelOutput.slice(22).slice(0, -1),
+      "base64"
+    ).then((snapshot) => {
+      console.log("Uploaded a base64 string!");
+    });
+  };
+
+  const saveZelfGenVeggie = () => {
+    console.log(modelOutput);
+    const storageRef = ref(storage, "images/" + eigenGroenteNaam + ".png");
+    const uploadTask = uploadString(
+      storageRef,
+      modelOutput.slice(22).slice(0, -1),
+      "base64"
+    ).then((snapshot) => {
+      console.log("Uploaded a base64 string!");
+    });
   };
 
   const setup = (p5, canvasParentRef) => {
@@ -155,7 +229,9 @@ export default function DrawingCanvas() {
       </div>
       <div className="col-4">
         {" "}
-        <p><strong>Oogst</strong></p>
+        <p>
+          <strong>Oogst</strong>
+        </p>
         <img src={modelOutput} alt="machine output" />
       </div>
       <div className="col-5"></div>
@@ -164,15 +240,24 @@ export default function DrawingCanvas() {
       <div className="col-2">
         <Button clear={clear} title="Wis tekening" icon="close" color="red" />
       </div>
-      <div className="col-3 save-stretch" >
-      {
-          savingVeggie? <GroenteSaver/>: <Button
+      <div className="col-3 save-stretch">
+        {savingVeggie ? (
+          <GroenteSaver
+            willeKeurigeGroente={willeKeurigeGroente}
+            groenteNaam={groenteNaam}
+            setgroenteNaam={setgroenteNaam}
+            setEigenGroenteNaam={setEigenGroenteNaam}
+            saveAutoGenVeggie={saveAutoGenVeggie}
+            saveZelfGenVeggie={saveZelfGenVeggie}
+          />
+        ) : (
+          <Button
             saveVeggie={saveVeggie}
             title="Groente opslaan"
             icon="save"
             color="blue"
           />
-        }
+        )}
       </div>
     </>
   );
