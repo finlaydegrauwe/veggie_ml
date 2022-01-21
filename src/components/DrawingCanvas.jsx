@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Sketch from "react-p5";
 import * as ml5 from "ml5";
 import ml5_model from "../models/veggieCuts6.pict";
@@ -6,14 +6,8 @@ import Button from "./button";
 import GroenteSaver from "../components/groentesaver"
 
 const SIZE = 256;
-let inputImg,
-  inputCanvas,
-  outputContainer,
-  statusMsg,
+let inputCanvas,
   pix2pix,
-  clearBtn,
-  transferBtn,
-  modelReady = false,
   isTransfering = false;
 
 export default function DrawingCanvas() {
