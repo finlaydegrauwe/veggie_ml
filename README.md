@@ -3,7 +3,7 @@
 🥕🥕🥕
 
 Dutch website & ML model!
-Take a look at its website: 
+Take a look here: .netlify.app
 
 Veggie is a machine learning model that has been trained with a database of only a couple of vegetables: beetroot, bell pepper, cabbage, carrot, cauliflower, corn, cucumber, eggplant, ginger and potatoes.
 
