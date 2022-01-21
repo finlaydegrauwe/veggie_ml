@@ -1,5 +1,7 @@
 # veggie_ml
 
+🥕🥕🥕
+
 Dutch website & ML model!
 
 Veggie is a machine learning model that has been trained with a database of only a couple of vegetables: beetroot, bell pepper, cabbage, carrot, cauliflower, corn, cucumber, eggplant, ginger and potatoes.
@@ -11,3 +13,9 @@ Then you can save it, or look around the database of vegetables made by others w
 Smoothie is the model taking the generated vegetables to then run it through the model once more, which often has a weird mix of soup as outcome, hence the name smoothie.
 
 Enjoy Veggie!
+
+🛠🛠🛠
+
+Database of vegetables used: 'Fruit and Vegetables Image Recognition' on Kaggle.
+Based on Pix2pix
+Made with React.JS, Firebase and a little bit of p5.JS
