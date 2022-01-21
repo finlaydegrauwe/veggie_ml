@@ -49,6 +49,10 @@ const stringsBegin = [
   "suiker",
   "patat",
   "tros",
+  "kers",
+  "blad",
+  "was",
+  "berg",
   "tuin"
 ];
 
@@ -71,7 +75,9 @@ const stringsEnd = [
   "dop",
   "rabi",
   "peen",
-  "steel"
+  "steel",
+  "was",
+  "kers"
 ];
 
 // Create a root reference
